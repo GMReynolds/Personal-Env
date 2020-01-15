@@ -1,12 +1,29 @@
 ---
 - hosts: all
   gather_facts: no
+  vars:
+    users:
+      - gen
+      - cheese
 
   pre_tasks:
   - raw: sudo apt-get -y update
   - raw: sudo apt -y  install python
 
   tasks:
+    - name: Create user accounts
+      user:
+        name: "{{ item }}"
+      with_items: "{{ users }}"
+      tags: create_user_accounts
+
+    - name: Set up authentication
+      authorized_key:
+        user: "{{ item }}"
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      with_items: "{{ users }}"
+      tags: create_user_accounts
+
     - name: Add the docker gpgkey
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
