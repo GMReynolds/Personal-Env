@@ -6,9 +6,11 @@
 [x] test terraform apply and terraform destroy
 [x] Get droplet resource working with IPV6 (enabling)
 [x] Setup and use ssh key
-[] Terraform output IP address
-[] Get it to output cost
+[x] Terraform output IP address
+[x] Get it to output cost
 
 ## Ansible tasks
-[] create user
-[] install python 3.6
+[x] create user
+[x] set up ssh keys
+[x] install python 3.6
+[] install docker
