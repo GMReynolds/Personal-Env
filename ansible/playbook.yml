@@ -1,10 +1,6 @@
 ---
 - hosts: all
   gather_facts: no
-  vars:
-    users:
-      - gen
-      - cheese
 
   pre_tasks:
   - raw: sudo apt-get -y update
@@ -13,25 +9,14 @@
   tasks:
     - name: Create user accounts
       user:
-        name: "{{ item }}"
-      with_items: "{{ users }}"
+        name: gen
+        shell: /bin/bash
+        groups: sudo
+        append: yes
       tags: create_user_accounts
 
     - name: Set up authentication
       authorized_key:
-        user: "{{ item }}"
+        user: gen
         key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      with_items: "{{ users }}"
       tags: create_user_accounts
-
-    - name: Add the docker gpgkey
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-      tags: docker
-
-    - name:
-      apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu stable
-        state: present
-      tags: docker
