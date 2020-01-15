@@ -1,0 +1,20 @@
+---
+- hosts: all
+  gather_facts: no
+
+  pre_tasks:
+  - raw: sudo apt-get -y update
+  - raw: sudo apt -y  install python
+
+  tasks:
+    - name: Add the docker gpgkey
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      tags: docker
+
+    - name:
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu stable
+        state: present
+      tags: docker
