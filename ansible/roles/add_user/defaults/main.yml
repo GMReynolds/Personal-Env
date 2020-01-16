@@ -1,0 +1,5 @@
+---
+user_name:
+user_groups: sudo
+user_shell: /bin/bash
+user_ssh_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"

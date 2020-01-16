@@ -6,17 +6,5 @@
   - raw: sudo apt-get -y update
   - raw: sudo apt -y  install python
 
-  tasks:
-    - name: Create user accounts
-      user:
-        name: gen
-        shell: /bin/bash
-        groups: sudo
-        append: yes
-      tags: create_user_accounts
-
-    - name: Set up authentication
-      authorized_key:
-        user: gen
-        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      tags: create_user_accounts
+  roles:
+    - add_user

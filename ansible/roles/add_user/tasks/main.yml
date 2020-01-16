@@ -1,0 +1,12 @@
+---
+- name: Create user accounts
+  user:
+    name: "{{ user_name }}"
+    shell: "{{ user_shell }}"
+    groups: "{{ user_groups }}"
+    append: yes
+
+- name: Set up authentication
+  authorized_key:
+    user: "{{ user_name }}"
+    key: "{{ user_ssh_key }}"
