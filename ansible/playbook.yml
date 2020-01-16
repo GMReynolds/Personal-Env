@@ -3,8 +3,10 @@
   gather_facts: no
 
   pre_tasks:
-  - raw: sudo apt-get -y update
-  - raw: sudo apt -y  install python
+  - name: update
+    raw: sudo apt-get -y update
+  - name: install python
+    raw: sudo apt -y  install python
 
   roles:
     - role: add_user
