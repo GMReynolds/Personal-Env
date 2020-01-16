@@ -7,4 +7,6 @@
   - raw: sudo apt -y  install python
 
   roles:
-    - add_user
+    - role: add_user
+      vars:
+        user_name: gen
