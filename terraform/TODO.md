@@ -23,6 +23,7 @@
 [x] install
 [x] create Packer script to build ubuntu image on DO
   - [x] vars for the packer script
-  - [] give good name
+  - [x] give good name with time stamp
+  - [] ? tags ?
 [] update terraform to use packer image
 [] packer to use ansible to provision image
