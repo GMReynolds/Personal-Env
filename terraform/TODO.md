@@ -17,10 +17,12 @@
    - []
    - []
    - []
-[] set up roles for tasks in ansible playbook
+[x] set up roles for tasks in ansible playbook
 
 # Packer tasks
-[] install
-[] create Packer script to build ubuntu image on DO
+[x] install
+[x] create Packer script to build ubuntu image on DO
+  - [x] vars for the packer script
+  - [] give good name
 [] update terraform to use packer image
 [] packer to use ansible to provision image
