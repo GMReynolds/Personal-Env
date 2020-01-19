@@ -26,4 +26,8 @@
   - [x] give good name with time stamp
   - [] ? tags ?
 [x] update terraform to use packer image
-[] packer to use ansible to provision image
+[x] packer to use ansible to provision image
+
+# Volume mounts
+[] create volume in terraform with label
+[] edit fs tab to mount Volume

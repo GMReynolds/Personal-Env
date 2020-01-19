@@ -10,5 +10,9 @@
     "size": "512mb",
     "ssh_username": "root",
     "snapshot_name": "cheese_{{isotime \"02-Jan-06_03:04\"}}"
-    }]
+    }],
+    "provisioners" : [{
+      "type": "ansible",
+      "playbook_file": "../ansible/playbook.yml"
+      }]
 }
