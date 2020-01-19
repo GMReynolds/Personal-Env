@@ -14,3 +14,13 @@
 [x] set up ssh keys
 [x] install python 3.6
 [] install docker
+   - []
+   - []
+   - []
+[] set up roles for tasks in ansible playbook
+
+# Packer tasks
+[] install
+[] create Packer script to build ubuntu image on DO
+[] update terraform to use packer image
+[] packer to use ansible to provision image
