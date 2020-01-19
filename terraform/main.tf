@@ -8,8 +8,14 @@ data "digitalocean_ssh_key" "gen-laptop" {
   name = "gen-laptop"
 }
 
+data "digitalocean_droplet_snapshot" "web_snapshot" {
+  name_regex  = "cheese*"
+  region      = "lon1"
+  most_recent = true
+}
+
 resource "digitalocean_droplet" "web" {
-  image    = "ubuntu-18-04-x64"
+  image    = data.digitalocean_droplet_snapshot.web_snapshot.id
   name     = "CheeseWD"
   region   = "lon1"
   size     = "s-1vcpu-1gb"
