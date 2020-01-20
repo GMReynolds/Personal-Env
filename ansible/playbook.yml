@@ -18,3 +18,9 @@
         path: /etc/sudoers.d/sudosetup
         line: '%sudo ALL=(ALL) NOPASSWD: ALL'
         create: yes
+
+    - name: mount fs under chosen user rather than root
+      become: yes
+      lineinfile:
+        path: /etc/fstab
+        line: 'LABEL=cheeseboard       /home/gen       ext4    defaults,uid=gen        0 0'

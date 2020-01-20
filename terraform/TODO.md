@@ -30,5 +30,5 @@
 
 # Volume mounts
 [x] create volume in terraform with label
-[] edit fs tab to mount Volume
-- [] ansible role/ task?
+[x] edit fs tab to mount Volume
+- [x] ansible role/ task?
