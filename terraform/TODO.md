@@ -14,9 +14,9 @@
 [x] set up ssh keys
 [x] install python 3.6
 [] install docker
-   - []
-   - []
-   - []
+   - [] !
+   - [] !
+   - [] !
 [x] set up roles for tasks in ansible playbook
 
 # Packer tasks
@@ -32,3 +32,12 @@
 [x] create volume in terraform with label
 [x] edit fs tab to mount Volume
 - [x] ansible role/ task?
+
+# Traffik
+[] create traffik container
+[] mount onto config file 
+
+# Research for next steps
+[] https://hub.docker.com/_/traefik
+[] https://letsencrypt.org/ - free and traefik sets up for you
+[] ? buy domain name ? fasthosts.com
