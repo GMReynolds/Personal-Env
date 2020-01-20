@@ -17,3 +17,6 @@
   ```
   - can only be done resource by resource basis - watch out on AWS etc / stuff with loads
   - destroys and recreates the vm
+
+  ### Adding label to volumes
+  fstab file - docs: https://linux.die.net/man/8/mount
