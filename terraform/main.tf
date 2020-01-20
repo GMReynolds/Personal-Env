@@ -14,6 +14,20 @@ data "digitalocean_droplet_snapshot" "web_snapshot" {
   most_recent = true
 }
 
+resource "digitalocean_volume" "example_data" {
+  region                   = "lon1"
+  name                     = "mozzerella"
+  size                     = "100"
+  initial_filesystem_type  = "ext4"
+  description              = "example volume for example data"
+  initial_filesystem_label = "cheeseboard"
+}
+
+resource "digitalocean_volume_attachment" "example_attachment" {
+  droplet_id = digitalocean_droplet.web.id
+  volume_id  = digitalocean_volume.example_data.id
+}
+
 resource "digitalocean_droplet" "web" {
   image    = data.digitalocean_droplet_snapshot.web_snapshot.id
   name     = "CheeseWD"

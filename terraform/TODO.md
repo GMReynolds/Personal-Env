@@ -29,5 +29,6 @@
 [x] packer to use ansible to provision image
 
 # Volume mounts
-[] create volume in terraform with label
+[x] create volume in terraform with label
 [] edit fs tab to mount Volume
+- [] ansible role/ task?
